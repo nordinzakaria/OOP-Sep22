@@ -4,15 +4,28 @@ import java.util.Scanner; // Among the several classes available for high-level 
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class ReadFromFile {
+public class MyFileReader {
 
-	public static void main(String[] args) {
+		private File file;
+		private Scanner sc; // may throw an Exception
 
-		File file = new File("test.txt");
 
-		try {
-			Scanner sc = new Scanner(file); // may throw an Exception
+		public boolean open(String fname) {	
+			try {
+				file = new File(fname);
+				sc = new Scanner(file);
+			} catch (IOException ex) { // IO Error
+				ex.printStackTrace();
+				return false;
+				}
 
+			return true;
+			}
+
+
+				// not complete
+		public void process() {
+			/*
 			while (sc.hasNextLine()) {  // hasNextLine return boolean	
 			       String line = sc.nextLine();
 			       System.out.println("Read " + line);
@@ -30,13 +43,7 @@ public class ReadFromFile {
 
 				// calculate total value per line
 				// store the total values in a different file
+				*/
 			}
 
-
-		} catch (IOException ex) { // IO Error
-			ex.printStackTrace();
-			System.exit(1);
-			}
-
-	}
 }

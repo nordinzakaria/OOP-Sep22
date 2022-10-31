@@ -30,8 +30,11 @@ class Vector2d {
 
 	// normalize
 	// divide the vector (both x and y) by its magnitude
-	public void normalize() {
+	public void normalize() throws Exception {
 		float mag = magnitude();
+		if (mag < 0.000001) // as good as 0 
+			throw new Exception("0 magnitude");
+
 		x /= mag;
 		y /= mag;
 	}

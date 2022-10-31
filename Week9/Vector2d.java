@@ -21,7 +21,7 @@ class Vector2d {
 	}
 
 	public float magnitude( ) {
-		return Math.sqrt(x*x + y*y);
+		return (float) Math.sqrt(x*x + y*y);
 	}
 
 	public float dotprod(Vector2d othervec) {
@@ -36,11 +36,18 @@ class Vector2d {
 		y /= mag;
 	}
 
+	public void display() {
+		System.out.println("vec = <"+x+","+y+">");
+	}
+
 	// write code to test the class
 	// test using at least 2 intances
 	public static void main(String args[]) {
-		
+	 Vector2d vec0 = new Vector2d();	
+	 Vector2d vec1 = new Vector2d(1,5);	
 
+	 vec0.normalize();
+	 vec0.display(); 
 	}
 
 }

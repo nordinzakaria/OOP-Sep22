@@ -49,7 +49,13 @@ class Vector2d {
 	 Vector2d vec0 = new Vector2d();	
 	 Vector2d vec1 = new Vector2d(1,5);	
 
-	 vec0.normalize();
+	 try {
+	 	vec0.normalize();
+	 } catch (Exception ex) {
+		System.out.print("Problem here");
+		ex.printStackTrace();
+	 }
+
 	 vec0.display(); 
 	}
 

@@ -3,10 +3,10 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class MyApp {
+public class MyAppGeneric {
 
 	public static void main(String args[]) {
-		Vector2d vecArray[] = new Vector2d[10];
+		ArrayList<Vector2d> vecArray = new ArrayList<Vector2d> ();
 		
 		Scanner myScanner = new Scanner(System.in); 
 		int index  = 0;
@@ -17,9 +17,9 @@ public class MyApp {
 
 			System.out.println("Added a vector ");
 			vec.display();
-			vecArray[index++] = vec;
+			vecArray.add(vec);
 
-			System.out.println(index + "vec now.. Another one? ");
+			System.out.println(vecArray.size() + " vec now.. Another one? ");
 			String response = myScanner.nextLine();
 			if (response.equals("yes") == false)
 				break;
